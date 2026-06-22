@@ -1,0 +1,12 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /frontend-react
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+  - package-ecosystem: composer
+    directory: /backend-laravel
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5

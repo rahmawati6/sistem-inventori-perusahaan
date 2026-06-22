@@ -1,110 +1,188 @@
-# 📦 Inventory Cloud System
-
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
-![React](https://img.shields.io/badge/React-18.x-61dafb.svg?logo=react)
-![Laravel](https://img.shields.io/badge/Laravel-11.x-FF2D20.svg?logo=laravel)
-
-Sistem Informasi Manajemen Inventori Perusahaan berbasis Cloud yang modern, efisien, dan open-source. Dibangun dengan memadukan kekuatan **React.js** di sisi *frontend* dan **Laravel** di sisi *backend* untuk menjamin kecepatan, keamanan, dan skalabilitas pendataan secara *real-time*.
-
----
-
-## ✨ Fitur Utama
-
-- 📊 **Dashboard Real-time**: Pantau total stok, pergerakan barang masuk/keluar, dan ringkasan performa secara instan dengan metrik interaktif.
-- 📦 **Manajemen Data Barang**: Sistem CRUD terintegrasi, mendukung ribuan data dengan pencarian pintar (*smart search*).
-- 📥 **Pencatatan Barang Masuk & Keluar**: *Tracking* komprehensif dilengkapi sistem penanggung jawab dan asal/tujuan logistik.
-- 📑 **Laporan Terpadu**: Hasil rekapitulasi data pergerakan inventori.
-- 🔐 **Keamanan & Autentikasi**: Sistem login aman menggunakan standar *Bcrypt hashing* dan autentikasi token modern. Antarmuka menggunakan *split-screen* kelas Enterprise.
-
----
-
-## 🚀 Screenshot Aplikasi
-
-Sistem ini mengusung desain *Modern Light Theme* dengan *Glassmorphism* dan micro-interactions yang mulus.
-
 <div align="center">
-  <img src="docs/login.png" alt="Halaman Login" width="48%" />
-  <img src="docs/dashboard.png" alt="Halaman Dashboard" width="48%" />
+  <img src="frontend-react/public/logo.png" alt="Inventory Cloud Logo" width="180" />
+
+  # Inventory Cloud
+
+  **Sistem informasi inventori perusahaan berbasis web untuk memantau stok dan pergerakan barang secara terpusat.**
+
+  [![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)](https://react.dev/)
+  [![Laravel](https://img.shields.io/badge/Laravel-10-FF2D20?logo=laravel&logoColor=white)](https://laravel.com/)
+  [![Vite](https://img.shields.io/badge/Vite-6-646CFF?logo=vite&logoColor=white)](https://vite.dev/)
+  [![MySQL](https://img.shields.io/badge/MySQL-8-4479A1?logo=mysql&logoColor=white)](https://www.mysql.com/)
+  [![CI](https://github.com/rahmawati6/sistem-inventori-perusahaan/actions/workflows/ci.yml/badge.svg)](https://github.com/rahmawati6/sistem-inventori-perusahaan/actions/workflows/ci.yml)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 </div>
 
----
+## Tentang Proyek
 
-## 🛠️ Teknologi yang Digunakan
+Inventory Cloud membantu perusahaan mengelola data barang, mencatat barang masuk dan keluar, memantau kondisi stok, serta melihat laporan inventori melalui satu dashboard. Aplikasi dibangun sebagai *single-page application* dengan React pada frontend dan REST API Laravel pada backend.
 
-### Frontend
-- **React.js** + Vite (Cepat & Ringan)
-- **React Router DOM** (Navigasi SPA)
-- **Recharts** (Visualisasi Data Interaktif)
-- **Lucide React** (Ikon Vektor Premium)
-- **CSS Vanilla Modular** (Performa rendering tinggi tanpa *bloatware*)
+## Fitur Utama
 
-### Backend
-- **Laravel 11** (PHP Framework kelas Enterprise)
-- **MySQL / MariaDB** (Database Relasional)
-- **Laravel Sanctum** (Autentikasi API yang kokoh)
+- Dashboard ringkasan stok dan aktivitas inventori
+- Grafik barang masuk dan keluar dalam enam bulan terakhir
+- Visualisasi stok berdasarkan kategori
+- Pengelolaan data barang (*create*, *read*, *update*, dan *delete*)
+- Pencatatan transaksi barang masuk dan barang keluar
+- Laporan inventori terpusat
+- Manajemen pengguna berdasarkan peran
+- Autentikasi API menggunakan Laravel Sanctum
+- Notifikasi interaktif untuk setiap aksi pengguna
 
----
+## Tampilan Aplikasi
 
-## ⚙️ Cara Instalasi (Local Development)
+Screenshot berikut diambil langsung dari aplikasi yang dijalankan secara lokal dengan data hasil *seeding*.
 
-Ikuti panduan berikut untuk menjalankan proyek ini di mesin lokal Anda.
+### Halaman Login
 
-### 1. Persiapan Backend (Laravel)
+![Halaman login Inventory Cloud](docs/login.png)
+
+### Dashboard
+
+![Dashboard Inventory Cloud](docs/dashboard.png)
+
+## Teknologi
+
+| Bagian | Teknologi |
+| --- | --- |
+| Frontend | React 19, React Router 7, Axios, Recharts, Lucide React |
+| Build Tool | Vite 6 |
+| Backend | Laravel 10, Laravel Sanctum |
+| Database | MySQL atau MariaDB |
+| Styling | CSS |
+
+## Struktur Proyek
+
+```text
+.
+├── backend-laravel/    # REST API Laravel, migration, dan seeder
+├── frontend-react/     # Aplikasi React
+├── docs/               # Dokumentasi dan screenshot aplikasi
+├── DEPLOYMENT.md       # Panduan deployment
+└── README.md
+```
+
+## Persyaratan Sistem
+
+Pastikan perangkat sudah memiliki:
+
+- PHP 8.1 atau lebih baru
+- Composer
+- Node.js 18 atau lebih baru dan npm
+- MySQL 8 atau MariaDB
+
+## Instalasi dan Menjalankan Aplikasi
+
+### 1. Clone repository
 
 ```bash
-# Masuk ke folder backend
+git clone https://github.com/rahmawati6/sistem-inventori-perusahaan.git
+cd sistem-inventori-perusahaan
+```
+
+### 2. Siapkan backend
+
+```bash
 cd backend-laravel
-
-# Install dependensi PHP
 composer install
-
-# Salin file environment dan atur konfigurasi database (DB_DATABASE, DB_USERNAME, dll)
 cp .env.example .env
 php artisan key:generate
+```
 
-# Jalankan migrasi dan seeder untuk data awal (Data Dummy lengkap)
-php artisan migrate:fresh --seed
+Untuk Windows PowerShell, gunakan perintah berikut sebagai pengganti `cp`:
 
-# Jalankan server lokal backend (di port 8000)
+```powershell
+Copy-Item .env.example .env
+```
+
+Buat database MySQL, lalu sesuaikan konfigurasi berikut di dalam `backend-laravel/.env`:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=db_inventory_laravel
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+Jalankan migration, seeder, dan server API:
+
+```bash
+php artisan migrate --seed
 php artisan serve
 ```
 
-### 2. Persiapan Frontend (React)
+Backend akan tersedia di `http://localhost:8000`.
+
+### 3. Siapkan frontend
+
+Buka terminal baru dari direktori utama proyek:
 
 ```bash
-# Buka tab terminal baru, masuk ke folder frontend
 cd frontend-react
-
-# Install dependensi Node.js
 npm install
-
-# Jalankan server Vite lokal
 npm run dev
 ```
 
-Buka browser Anda dan akses `http://localhost:5173`. 
+Frontend akan tersedia di `http://localhost:5173`.
 
-> **Akses Default:**
-> Username: `admin`
-> Password: `admin123`
+Jika backend dijalankan pada alamat lain, buat file `frontend-react/.env` dan atur URL API:
+
+```env
+VITE_API_URL=http://localhost:8000/api
+```
+
+## Akun Demo
+
+Gunakan akun bawaan dari `UserSeeder` setelah menjalankan proses seeding:
+
+| Field | Nilai |
+| --- | --- |
+| Username | `admin` |
+| Password | `admin123` |
+| Role | Admin |
+
+> Akun ini hanya ditujukan untuk lingkungan pengembangan. Ganti kredensial sebelum aplikasi digunakan pada lingkungan produksi.
+
+## Build untuk Produksi
+
+```bash
+cd frontend-react
+npm run build
+```
+
+Panduan deployment yang lebih lengkap tersedia di [DEPLOYMENT.md](DEPLOYMENT.md).
+
+## Kontribusi
+
+Kontribusi sangat terbuka. Baca [CONTRIBUTING.md](CONTRIBUTING.md) untuk panduan pengembangan, standar commit, dan proses pengajuan *pull request*.
+
+Untuk mengusulkan perubahan:
+
+1. *Fork* repository ini.
+2. Buat branch baru (`git checkout -b feature/nama-fitur`).
+3. Commit perubahan (`git commit -m "feat: menambahkan nama fitur"`).
+4. Push branch (`git push origin feature/nama-fitur`).
+5. Buat *pull request*.
+
+## Catatan Keamanan
+
+Jangan memasukkan file `.env`, kredensial database, token, atau data sensitif lainnya ke dalam repository. Jika menemukan celah keamanan, ikuti prosedur pelaporan privat di [SECURITY.md](SECURITY.md).
+
+## Dokumentasi Komunitas
+
+- [Panduan Kontribusi](CONTRIBUTING.md)
+- [Kode Etik](CODE_OF_CONDUCT.md)
+- [Kebijakan Keamanan](SECURITY.md)
+- [Panduan Deployment](DEPLOYMENT.md)
+
+## Lisensi
+
+Proyek ini tersedia di bawah [MIT License](LICENSE). Anda bebas menggunakan, memodifikasi, dan mendistribusikannya sesuai ketentuan lisensi.
 
 ---
 
-## 🤝 Berkontribusi (Contributing)
-
-Kami sangat terbuka untuk kontribusi! Jika Anda menemukan kutu (*bug*), ingin menambah fitur baru, atau meningkatkan kualitas kode:
-1. *Fork* repositori ini.
-2. Buat *branch* fitur Anda (`git checkout -b fitur/FiturBaru`).
-3. Lakukan *commit* atas perubahan Anda (`git commit -m 'Menambahkan FiturBaru'`).
-4. *Push* ke *branch* tersebut (`git push origin fitur/FiturBaru`).
-5. Buka *Pull Request* baru.
-
----
-
-## 📄 Lisensi
-
-Didistribusikan di bawah lisensi MIT. Lihat file `LICENSE` untuk informasi lebih lanjut.
-
----
-**Dibuat dengan ❤️ untuk merevolusi manajemen gudang digital.**
+<div align="center">
+  Dibuat untuk membantu pengelolaan inventori perusahaan menjadi lebih rapi, cepat, dan terukur.
+</div>

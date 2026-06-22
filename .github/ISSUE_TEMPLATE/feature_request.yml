@@ -1,0 +1,36 @@
+name: Usulan Fitur
+description: Usulkan peningkatan atau kemampuan baru
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Masalah yang ingin diselesaikan
+      description: Jelaskan kebutuhan atau kendala pengguna yang menjadi dasar usulan.
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Solusi yang diusulkan
+      description: Jelaskan perilaku fitur dan manfaat yang diharapkan.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatif yang dipertimbangkan
+  - type: textarea
+    id: additional
+    attributes:
+      label: Informasi tambahan
+      description: Tambahkan contoh, sketsa, atau referensi bila tersedia.
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Konfirmasi
+      options:
+        - label: Saya sudah mencari usulan serupa dan tidak menemukan duplikat.
+          required: true
